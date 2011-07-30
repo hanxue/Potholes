@@ -17,4 +17,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     (r'^static/(?P<Path>.*)$','django.views.static.serve',
         {'document_root':settings.MEDIA_ROOT}),    
+
+    # Authentication files
+    (r'^accounts/', include('socialauth.urls')),
+    (r'^$', 'socialauth.views.signin_complete'),
 )
