@@ -88,11 +88,11 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.comments',
-    'socialauth',
+    'social_auth',
     'openid_consumer',
-    'commentor',
-    'example',
-    'example_comments',
+    #'commentor',
+    #'example',
+    #'example_comments',
 )
 
 COMMENTS_APP = 'example_comments'
@@ -110,12 +110,15 @@ import os
 MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'media'))
 MEDIA_URL = '/site_media/'
 
-<<<<<<< HEAD
-#Oauth for Twitter
-TWITTER_CONSUMER_KEY = 'KcErkotA2Xn1oOl8GQ'
-TWITTER_CONSUMER_SECRET = 'qy6sRZ58bJhuYIP8Ta2JInIClaBEtoYPltHM5Rv8'
-
-LOGIN_URL = '/login/'
-=======
-SITE_NAME = 'foobar'
->>>>>>> e542a995053440b90a3ca817c848a1d14df7ad03
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.twitter.TwitterBackend',
+    'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.google.GoogleOAuthBackend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
+    'social_auth.backends.google.GoogleBackend',
+    'social_auth.backends.yahoo.YahooBackend',
+    'social_auth.backends.contrib.linkedin.LinkedinBackend',
+    'social_auth.backends.OpenIDBackend',
+    'social_auth.backends.contrib.livejournal.LiveJournalBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
