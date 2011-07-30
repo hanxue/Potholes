@@ -1,0 +1,242 @@
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-weight: normal;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote {
+	quotes: none;
+}
+blockquote:before, blockquote:after {
+	content: '';
+	content: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a img {
+	border: none;
+}
+
+/* */
+
+body { background: #339BC3; font-size: 14px; }
+h1 { font-size: 20px; padding: 4px 0px; }
+h2 { font-size: 17px; padding: 4px 0px; }
+h3 { font-size: 15px; padding: 4px 0px; }
+p { padding: 8px 0; line-height: 23px; }
+
+.clear { clear: both; }
+#header,
+#content {
+  background: #FFF;
+}
+
+a:link,
+a:visited {
+  color: #339BC3;
+  text-decoration: underline;
+}
+
+.wrapper {
+  width: 960px; margin: 0 auto; font-family: "Lucida Grande", Lucida, Helvetica, sans-serif;
+}
+
+#header { padding: 30px 0 10px; }
+#header h1 { font: bold 30px Helvetica, sans-serif; text-transform: uppercase; }
+#header h1 a { text-decoration: none; color: #000; }
+#header h1 a span { color: #F28705; }
+
+#topnav {  padding-top: 8px }
+#topnav li {
+  float: left;
+  background: #FBFDFE;
+  padding: 8px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-right: 2px;
+  color: #0A3D57;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.59, rgb(211,235,249)),
+      color-stop(0.8, rgb(253,254,255))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(211,235,249) 59%,
+      rgb(253,254,255) 80%
+  );
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.59, rgb(229,245,255)),
+      color-stop(0.8, rgb(253,254,255))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(229,245,255) 59%,
+      rgb(253,254,255) 80%
+  );
+  border-bottom: 1px solid #C0E0F0;
+}
+
+#topnav li.active {
+  background: white;
+  border-bottom-color: white;
+}
+#topnav li a strong { font-size: 18px; color: #383838; width: 120px; display: block; line-height: 10px; text-transform: uppercase; }
+#topnav li a {
+  font: bold 14px "Helvetica Neue", Helvetica, sans-serif;
+  color: #339BC3;
+  text-decoration: none;
+}
+
+#topnav li.active a strong {
+  color: #383838;
+}
+
+#topnav li.active a {
+  color: #0A3D57;
+}
+
+#content {
+  padding: 45px 0;
+  box-shadow: 1px 4px 15px #000;
+  -webkit-box-shadow: 1px 4px 15px #000;
+  -moz-box-shadow: 1px 4px 15px #000;
+}
+
+#table { width: 100%: }
+table.projects { width: 100%; }
+table.projects tbody tr:nth-child(odd) { background: #F4F4F4; }
+table.projects tbody tr:nth-child(even) { background: #FFF; }
+
+table.info { width: 100%; }
+table.info tr {
+  border-bottom: 1px solid #DDD;
+}
+table.info tr:last-child {
+  border-bottom: 0px;
+}
+table.info th, table.info td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 0px;
+}
+table.info th {
+  font-weight: normal;
+  font-size: 13px;
+  width: 75px;
+}
+    
+
+.left { width: 550px; float: left; clear: both; }
+.right { width: 360px; float: right; border: 1px solid #7FC6E2; border-radius: 10px; padding: 10px; clear: right; margin-bottom: 30px; }
+textarea { width: 100%: }
+.left textarea { height: 195px; width: 100%; }
+
+#new_project label, .edit_project label { display: block; }
+#new_project input[type=text], .edit_project input[type=text] { width: 100%; }
+.errors { border: red 1px solid; padding: 4px; }
+.errors ul { list-style-type: disc; margin-left: 20px;}
+
+.project h1 a { font: bold 30px Helvetica, sans-serif; text-decoration: none; color: #000; }
+.project .tagline { font: 18px Helvetica, sans-serif; color: #3195A6 }
+.project h2 { font: bold 24px Helvetica, sans-serif; margin-top: 30px; }
+.project .share { background: #FEF8E5; padding: 3px; }
+.project .share input { border: 3px solid #F8D574; width: 200px; }
+.project .edit { float: right; }
+
+.right h2 { font: bold 18px "Helvetica Neue", Helvetica; }
+
+.status li,
+.events li,
+.projects li {
+  border-top: 1px #BBE3F3 solid;
+  margin: 3px 0px;
+  padding: 5px 0px;
+  clear: both;
+  font: 14px "Lucida Grande";
+}
+
+.left .image-block .content {
+  width: 475px;
+}
+.right .image-block .content {
+  width: 300px;
+}
+
+.status { font-size: 14px; line-height: normal; }
+.status a { text-decoration: none; }
+.statuses .thumbnail { float: left; padding-right: 4px; display: block; }
+
+#footer { text-align: center; color: #FFF; font-size: 10px; padding: 20px; }
+
+#footer li {
+  display: inline;
+}
+
+#footer a { color: #FFF; text-decoration: none; }
+
+/* body has to apply: overflow-y: hidden; */
+.hoverbox { position: absolute; width: 100%; z-index: 102;  display: none; }
+.hoverbox .background { width: 100%; position: fixed; top: 0; left: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); overflow-y: scroll; }
+.hoverbox .hoverbox-content { width: 540px; margin: 50px auto; background: #FFF; padding: 20px 30px; box-shadow: 0px 0px 10px #000; }
+.hoverbox .close { float: right; cursor: pointer; }
+.hoverbox .image-block .content { width: 450px; }
+
+.image-block .title a { text-decoration: none; color: #111; }
+.image-block .title *.datetime { font-size: 11px; color: #AAA; }
+.image-block .description a { color: #0A3D57; }
+
+.status .image-block .title a.datetime:hover { text-decoration: underline; }
+.status a.comment { float: left; font-size: 13px; color: #444; }
+.status a.comment:hover { text-decoration: underline; }
+.status .facepile a { color: #444; }
+.projects .image-block .title { font-size: 16px; }
+.projects .image-block .description { font-size: 13px; }
+
+.tweet { font-size: 9px; }
+
+/* Disqus */
+#disqus_thread h3 { font-size: 16px; }
+.dsq-brlink,
+#dsq-subscribe,
+#dsq-trackback-url { font-size: 12px; }
+#dsq-account-dropdown { display: none; }
+#dsq-sort-by { float: right; }
+
+/* jquery */
+#ui-datepicker-div {
+  font-size: 12px;
+}
