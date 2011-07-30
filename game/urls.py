@@ -1,26 +1,25 @@
-from django.conf.urls.defaults import patterns, include, url
-import settings
+from django.conf.urls.defaults import *
+from commentor.views import leave_comment
 
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'game.views.home', name='home'),
-    # url(r'^game/', include('game.foo.urls')),
-    (r'api/',include('game.api.urls')),
-    (r'issues/',include('game.issues.urls')),
-    (r'^login/$', 'django.contrib.auth.views.login'),
-    # Uncomment the admin/doc line below to enable admin documentation:
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
-    (r'^static/(?P<Path>.*)$','django.views.static.serve',
-        {'document_root':settings.MEDIA_ROOT}),    
-
-    # Authentication files
+    (r'^blog/', include('example.urls')),
     (r'^accounts/', include('socialauth.urls')),
+    (r'^admin/', admin.site.urls), 
+    #(r'^$', leave_comment), 
     (r'^$', 'socialauth.views.signin_complete'),
+    (r'^comments/post/', 'example_comments.views.post_comment'),
+    (r'comments/', include('django.contrib.comments.urls')),
 )
+
+from django.conf import settings
+if settings.DEBUG:
+    
+    urlpatterns += patterns('',
+        # This is for the CSS and static files:
+        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
+         {'document_root': settings.MEDIA_ROOT}),
+    )
+    
