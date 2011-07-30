@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Issue(models.Model):
     title = models.CharField(max_length=255)
-    image = models.ImageFIeld(upload_to='static/upload/',null=True,blank=True)
+    image = models.ImageField(upload_to='static/upload/',null=True,blank=True)
     description = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
     upvote = models.IntegerField(default=0)

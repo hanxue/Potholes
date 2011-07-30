@@ -22,7 +22,7 @@ def issue_submit(request):
         issue.save()
         return HttpResponseRedirect('/')
     else:
-        return render_to_response('',{}
+        return render_to_response('issue_submit.html',{}
               context_instance=RequestContext(request))
 
 
