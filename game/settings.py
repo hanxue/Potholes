@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    'socialauth',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -147,3 +148,26 @@ LOGGING = {
         },
     }
 }
+
+# OAuth Facebook, etc authentication
+FACEBOOK_APP_ID = '214351508615472'
+FACEBOOK_API_KEY = '44b6438e38b41b70fdff489f6b677a36'
+FACEBOOK_SECRET_KEY = 'f38f0ecb63e1523364fa8dffad6026af'
+
+AUTHENTICATION_BACKENDS = {
+    'django.contrib.auth.backends.ModelBackend',
+    'socialauth.auth_backends.FacebookBackend',
+    'socialauth.auth_backends.FacebookBackend',
+}
+
+TEMPLATE_CONTEXT_PROCESSORS = {
+    "socialauth.context_processors.facebook_api_key",
+    "django.core.context_processors.media",
+    "django.contrib.auth.context_processors.auth",
+    "django.core.oontext_processors.request",
+}
+
+
+#Oauth for Twitter
+TWITTER_CONSUMER_KEY = 'KcErkotA2Xn1oOl8GQ'
+TWITTER_CONSUMER_SECRET = 'qy6sRZ58bJhuYIP8Ta2JInIClaBEtoYPltHM5Rv8'

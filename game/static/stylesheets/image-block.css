@@ -1,0 +1,12 @@
+.image-block .image {
+  float: left;
+}
+
+.image-block .content {
+  float: left;
+  margin-left: 4px;
+}
+
+.image-block .title {
+  margin-bottom: 3px;
+}
