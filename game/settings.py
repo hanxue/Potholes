@@ -94,6 +94,7 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.messages.middlewre.MessageMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -155,18 +156,19 @@ FACEBOOK_APP_ID = '214351508615472'
 FACEBOOK_API_KEY = '44b6438e38b41b70fdff489f6b677a36'
 FACEBOOK_SECRET_KEY = 'f38f0ecb63e1523364fa8dffad6026af'
 
-AUTHENTICATION_BACKENDS = {
+AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'socialauth.auth_backends.FacebookBackend',
     'socialauth.auth_backends.FacebookBackend',
-}
+)
 
-TEMPLATE_CONTEXT_PROCESSORS = {
+TEMPLATE_CONTEXT_PROCESSORS = (
     "socialauth.context_processors.facebook_api_key",
     "django.core.context_processors.media",
     "django.contrib.auth.context_processors.auth",
     "django.core.oontext_processors.request",
-}
+    "django.contrib.messages.context_processors.messages",
+)
 
 
 #Oauth for Twitter
