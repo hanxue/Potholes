@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>
+			ISSUES
+		</title>
+	</head>
+	<body>
+		<div id="login">
+		<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+		{% csrf_token %}
+	   		<div id="username">
+				<div id="username_label">{{ form.username.label_tag }}</div>
+    				<div id="username_field">{{ form.username }}</div>
+			</div>
+		
+			<div id="password">
+		    		<div id="password_label">{{ form.password.label_tag }}</div>
+ 		    		<div id="password_field">{{ form.password }}</div>
+			</div>
+		
+
+			<input type="submit" value="login" />
+			<input type="hidden" name="next" value="{{ next }}" />
+		</form>
+		</div>
+	</body>
+</html>
