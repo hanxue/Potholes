@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>
+			ISSUES
+		</title>
+	</head>
+	<body>
+   		{% for i in issues %}
+			<div class="event_item">
+				<div class="title">
+					{{i.title}}
+				</div>
+				<div class="description">
+					{{i.description}}
+				</div>
+				<div class="images">
+					<img src="{{i.image}}"></img>
+				</div>
+				<div class="upvote">
+					{{i.upvote}}
+				</div>
+				<div class="downvote">
+					{{i.downvote}}
+				</div>
+				<div class="submitter">
+					{{i.user.username}}
+				</div>
+			</div>
+                {% endfor %}
+	</body>
+</html>
