@@ -110,12 +110,10 @@ import os
 MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'media'))
 MEDIA_URL = '/site_media/'
 
-<<<<<<< HEAD
 #Oauth for Twitter
 TWITTER_CONSUMER_KEY = 'KcErkotA2Xn1oOl8GQ'
 TWITTER_CONSUMER_SECRET = 'qy6sRZ58bJhuYIP8Ta2JInIClaBEtoYPltHM5Rv8'
 
 LOGIN_URL = '/login/'
-=======
 SITE_NAME = 'foobar'
->>>>>>> e542a995053440b90a3ca817c848a1d14df7ad03
+
