@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     # url(r'^game/', include('game.foo.urls')),
     (r'api/',include('game.api.urls')),
     (r'issues/',include('game.issues.urls')),
-    (r'^login/$', 'django.contrib.auth.views.login'),
+    #(r'^login/$', 'django.contrib.auth.views.login'),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
