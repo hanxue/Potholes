@@ -94,8 +94,8 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
-    'django.contrib.messages.middlewre.MessageMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -166,7 +166,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "socialauth.context_processors.facebook_api_key",
     "django.core.context_processors.media",
     "django.contrib.auth.context_processors.auth",
-    "django.core.oontext_processors.request",
+    "django.core.context_processors.request",
     "django.contrib.messages.context_processors.messages",
 )
 

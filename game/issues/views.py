@@ -1,8 +1,8 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
-from django.templates import RequestContext
-from game.engine.issue.models import Issue
+from django.template import RequestContext
+from game.issues.models import Issue
 # Create your views here.
 
 @login_required
@@ -22,14 +22,14 @@ def issue_submit(request):
         issue.save()
         return HttpResponseRedirect('/')
     else:
-        return render_to_response('issue_submit.html',{}
+        return render_to_response('issue_submit.html',{},
               context_instance=RequestContext(request))
 
 
 @login_required
 def issue_view(request,id):
     issue = Issue.objects.get(id=id)
-    return render_to_respone('',{'issue':issue}
+    return render_to_respone('',{'issue':issue},
          context_instance=RequestContext(request))
 
 @login_required
