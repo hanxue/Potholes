@@ -7,7 +7,7 @@ class Character(models.Model):
     player = models.OneToOneField(User)
     experience = models.IntegerField()
     action = models.IntegerField()
-    avatar = models.ImageField(upload_to='upload/',null=True)
+    avatar = models.ImageField(upload_to='upload/',null=True,blank=True)
     title = models.CharField(max_length=255,default='Newbie') 
 
     def __str__(self):

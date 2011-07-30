@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div id="login">
-		<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+		<form method="post" action="{% url django.contrib.auth.views.login %}">
 		{% csrf_token %}
 	   		<div id="username">
 				<div id="username_label">{{ form.username.label_tag }}</div>

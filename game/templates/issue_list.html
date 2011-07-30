@@ -14,7 +14,9 @@
 					{{i.description}}
 				</div>
 				<div class="images">
-					<img src="{{i.image}}"></img>
+                                       {% if i.image %}
+					<img src="{{i.image.url}}"></img>
+                                       {% endif %}
 				</div>
 				<div class="upvote">
 					{{i.upvote}}

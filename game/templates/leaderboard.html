@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>
+			ISSUES
+		</title>
+	</head>
+	<body>
+   		{% for i in characters %}
+			<div class="user_item">
+				<div class="username">{{i.username}}</div>
+				<div class="score">{{i.score}}</div>		
+			</div>
+                {% endfor %}
+	</body>
+</html>

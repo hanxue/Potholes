@@ -40,6 +40,7 @@ class Conditions:
         return None
 
 def give_point(player,action):
+    print 'giving point'
     if player.action <= 0:
         return 
     player.action = player.action - action.action
@@ -50,6 +51,7 @@ def give_point(player,action):
     play_log.save()
     
 def give_reward(player,action):
+    print 'giving report'
     play_log = ActionLog.objects.filter(player=player,action=action)
     condition = RewardCondition.objects.filter(action=action)
     
@@ -57,7 +59,9 @@ def give_reward(player,action):
         c = Conditions(i,play_log)
         if c.get_reward():
             reward = c.get_reward()
-            reward_point(player,reward)
+            check = RewardLog.objects.filter(player=player,reward=reward)
+            if not check:
+                reward_point(player,reward)
 
 def reward_point(player,reward):
     orig_point = getattr(player,reward.attr)

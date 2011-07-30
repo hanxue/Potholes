@@ -35,12 +35,12 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = '/home/sweemeng/hackweekend/game/static/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = 'http://127.0.0.1:8000/static/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -79,6 +79,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    "/home/sweemeng/hackweekend/game/templates/",
 )
 
 INSTALLED_APPS = (
@@ -88,47 +89,14 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.comments',
-    'social_auth',
-    'openid_consumer',
     'south',
-    'issues'
-    #'commentor',
-    #'example',
-    #'example_comments',
+    'piston',
+    'engine',
+    'issues',
 )
-
-COMMENTS_APP = 'example_comments'
 
 LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 
-try:
-    from localsettings import *
-except ImportError:
-    pass
-
-import os
-MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'media'))
-MEDIA_URL = '/site_media/'
-
-#Oauth for Twitter
-TWITTER_CONSUMER_KEY = 'KcErkotA2Xn1oOl8GQ'
-TWITTER_CONSUMER_SECRET = 'qy6sRZ58bJhuYIP8Ta2JInIClaBEtoYPltHM5Rv8'
-
-LOGIN_URL = '/login/'
-SITE_NAME = 'foobar'
-
-AUTHENTICATION_BACKENDS = (
-    'social_auth.backends.twitter.TwitterBackend',
-    'social_auth.backends.facebook.FacebookBackend',
-    'social_auth.backends.google.GoogleOAuthBackend',
-    'social_auth.backends.google.GoogleOAuth2Backend',
-    'social_auth.backends.google.GoogleBackend',
-    'social_auth.backends.yahoo.YahooBackend',
-    'social_auth.backends.contrib.linkedin.LinkedinBackend',
-    'social_auth.backends.OpenIDBackend',
-    'social_auth.backends.contrib.livejournal.LiveJournalBackend',
-    'django.contrib.auth.backends.ModelBackend',
-)
 

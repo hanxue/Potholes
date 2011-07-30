@@ -13,7 +13,9 @@
 				{{issue.description}}
 			</div>
 			<div class="images">
-				<img src="{{issue.image}}"></img>
+                               {% if issue.image %}
+				<img src="{{issue.image.url}}"></img>
+                               {% endif %}
 			</div>
 			<div class="upvote">
 				{{issue.upvote}}
@@ -24,6 +26,11 @@
 			<div class="submitter">
 				{{issue.user.username}}
 			</div>
+                        <div class="vote">
+                        	<a href="/issues/upvote/{{issue.id}}">Vote Up</a>
+                        	<a href="/issues/downvote/{{issue.id}}">Vote Down</a>
+         
+                        </div>
 		</div>
 
 	</body>
