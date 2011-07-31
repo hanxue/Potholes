@@ -67,7 +67,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    "socialauth.context_processors.facebook_api_key",
+    # "socialauth.context_processors.facebook_api_key",
     'django.core.context_processors.media',
     "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.request",
