@@ -14,7 +14,7 @@ def issue_submit(request):
         user = request.user
         player = Character.objects.get(player=user)
         if not player.action:
-            return HttpResponseRedirect('/issues/view/'+str(id))
+            return HttpResponseRedirect('/issues/list/')
         form_data = request.POST
         title = form_data.get('title')
         description = form_data.get('description')
@@ -39,7 +39,7 @@ def issue_submit(request):
             game_utils.give_point(player,action)
             game_utils.give_reward(player,action)
 
-        return HttpResponseRedirect('/issues/view/'+str(issue.id))
+        return HttpResponseRedirect('/issues/list/')
     else:
         
         player = Character.objects.get(player=request.user)
@@ -75,6 +75,19 @@ def issue_upvote(request,id):
     return HttpResponseRedirect('/issues/view/'+str(id))
 
 @login_required
+def issue_upvote_list(request,id): 
+    player = Character.objects.get(player=request.user)
+    if not player.action:
+        return HttpResponseRedirect('/issues/list/')
+    issue = Issue.objects.get(id=id)
+    issue.upvote = issue.upvote + 1
+    issue.save()
+    action = Action.objects.get(id=1)
+    game_utils.give_point(player,action)
+    game_utils.give_point(player,action)
+    return HttpResponseRedirect('/issues/list')
+
+@login_required
 def issue_downvote(request,id):
     player = Character.objects.get(player=request.user)
     if not player.action:
@@ -88,3 +101,18 @@ def issue_downvote(request,id):
     game_utils.give_point(player,action)
 
     return HttpResponseRedirect('/issues/view/'+str(id))
+
+@login_required
+def issue_downvote_list(request,id):
+    player = Character.objects.get(player=request.user)
+    if not player.action:
+        return HttpResponseRedirect('/issues/list/')
+
+    issue = Issue.objects.get(id=id)
+    issue.downvote = issue.downvote + 1
+    issue.save()
+    action = Action.objects.get(id=1)
+    game_utils.give_point(player,action)
+    game_utils.give_point(player,action)
+
+    return HttpResponseRedirect('/issues/list')
