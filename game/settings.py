@@ -61,7 +61,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'openid_consumer.middleware.OpenIDMiddleware',
+    # 'openid_consumer.middleware.OpenIDMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     #'socialauth.middleware.FacebookConnectMiddleware'
 )
