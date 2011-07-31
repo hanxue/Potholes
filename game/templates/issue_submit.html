@@ -5,6 +5,10 @@
 		</title>
 	</head>
 	<body>
+               <div id='player_info'>
+               {{player.player.username}}  xp: {{player.experience}} ap: {{player.action}}
+               </div>
+                <br/>
 		<form method="POST" action="/issues/submit/" enctype="multipart/form-data">{%csrf_token%}
                         <br/><label for="title" id="label_title">Title: </label>
 			<input type="text" name="title" id="title"></input>

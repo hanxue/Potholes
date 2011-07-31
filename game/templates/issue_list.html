@@ -5,10 +5,14 @@
 		</title>
 	</head>
 	<body>
+		<div id='player_info'>
+               {{player.player.username}}  xp: {{player.experience}} ap: {{player.action}}
+               </div>
+                <br/>
    		{% for i in issues %}
 			<div class="event_item">
 				<div class="title">
-					{{i.title}}
+					<a href="/issues/view/{{i.id}}">{{i.title}}</a>
 				</div>
 				<div class="description">
 					{{i.description}}
@@ -28,6 +32,7 @@
 					{{i.user.username}}
 				</div>
 			</div>
+                        <br/>
                 {% endfor %}
 	</body>
 </html>

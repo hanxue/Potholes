@@ -11,6 +11,7 @@ from game.engine.models import *
 @login_required
 def issue_submit(request):
     if request.method == 'POST': 
+        user = request.user
         player = Character.objects.get(player=user)
         if not player.action:
             return HttpResponseRedirect('/issues/view/'+str(id))
@@ -18,7 +19,6 @@ def issue_submit(request):
         title = form_data.get('title')
         description = form_data.get('description')
         location = form_data.get('location')
-        user = request.user
         img = request.FILES.get('img')
         
         issue = Issue()
@@ -41,19 +41,24 @@ def issue_submit(request):
 
         return HttpResponseRedirect('/issues/view/'+str(issue.id))
     else:
-        return render_to_response('issue_submit.html',{},
+        
+        player = Character.objects.get(player=request.user)
+        return render_to_response('issue_submit.html',{'player':player},
               context_instance=RequestContext(request))
 
 @login_required
 def issue_list(request):
+    player = Character.objects.get(player=request.user)
     issue = Issue.objects.all()
-    return render_to_response('issue_list.html',{'issues':issue},
+    return render_to_response('issue_list.html',{'issues':issue,'player':player},
          context_instance=RequestContext(request))
 
 @login_required
 def issue_view(request,id):
+    player = Character.objects.get(player=request.user)
+    issue = Issue.objects.all()
     issue = Issue.objects.get(id=id)
-    return render_to_response('issue_item.html',{'issue':issue},
+    return render_to_response('issue_item.html',{'issue':issue,'player':player},
          context_instance=RequestContext(request))
 
 @login_required
